@@ -1,0 +1,23 @@
+{% comment %}
+  Atra - one promo image card inside the desktop mega menu.
+
+  Accepts:
+  - url: {String} link target
+  - image: {Object} image to show (4:5 crop)
+  - label: {String} caption
+{% endcomment %}
+<a class="atra-mega__card" href="{{ url }}">
+  <div class="atra-mega__card-media">
+    {{
+      image
+      | image_url: width: 600
+      | image_tag:
+        loading: 'lazy',
+        widths: '300,450,600',
+        sizes: '(min-width: 990px) 20vw, 50vw',
+        alt: label,
+        class: 'atra-mega__card-img'
+    }}
+  </div>
+  <span class="atra-mega__card-label">{{ label | escape }}</span>
+</a>

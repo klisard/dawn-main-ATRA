@@ -1,8 +1,19 @@
 {% comment %}
-  Renders a megamenu for the header.
+  ATRA OVERRIDE of Dawn 16.0.0 snippets/header-mega-menu.liquid.
 
-  Usage:
-  {% render 'header-mega-menu' %}
+  Delta against upstream (re-apply after merging a new Dawn):
+    1. `<ul class="mega-menu__list page-width ...">` is wrapped in
+       `<div class="page-width atra-mega__grid">` and loses the `page-width` class.
+    2. A `.atra-mega__cards` column with up to 2 promo images is added after the list.
+
+  Promo card sources, in priority order:
+    a) a menu whose handle is `mega-<top-level-handle>` (e.g. `mega-veshje`) - each
+       link that points at a collection with a featured image becomes a card;
+    b) the top-level link itself, if it points at a collection with an image;
+    c) the first child links that point at collections with a featured image.
+
+  Markup, ids and classes are otherwise identical, so header.js, keyboard
+  navigation and ARIA behaviour are untouched. Styling: assets/atra.css.
 {% endcomment %}
 
 <nav class="header__inline-menu">
@@ -30,43 +41,82 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
-                <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
-                  role="list"
-                >
-                  {%- for childlink in link.links -%}
-                    <li>
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
-                      </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
+                <div class="page-width atra-mega__grid">
+                  <ul
+                    class="mega-menu__list{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                    role="list"
+                  >
+                    {%- for childlink in link.links -%}
+                      <li>
+                        <a
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          href="{{ childlink.url }}"
+                          class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                        {%- if childlink.links != blank -%}
+                          <ul class="list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+
+                  {%- liquid
+                    assign shown = 0
+                    assign promo_handle = 'mega-' | append: link.handle
+                    assign promo_menu = linklists[promo_handle]
+                  -%}
+                  <div class="atra-mega__cards">
+                    {%- if promo_menu != blank and promo_menu.links.size > 0 -%}
+                      {%- for promolink in promo_menu.links -%}
+                        {%- if shown < 2 and promolink.type == 'collection_link' -%}
+                          {%- assign c = promolink.object -%}
+                          {%- if c.featured_image != blank -%}
+                            {%- render 'atra-mega-card', url: promolink.url, image: c.featured_image, label: promolink.title -%}
+                            {%- assign shown = shown | plus: 1 -%}
+                          {%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- if shown < 2 and link.type == 'collection_link' -%}
+                      {%- assign c = link.object -%}
+                      {%- if c.featured_image != blank -%}
+                        {%- render 'atra-mega-card', url: link.url, image: c.featured_image, label: link.title -%}
+                        {%- assign shown = shown | plus: 1 -%}
                       {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
+                    {%- endif -%}
+
+                    {%- for childlink in link.links -%}
+                      {%- if shown < 2 and childlink.type == 'collection_link' -%}
+                        {%- assign c = childlink.object -%}
+                        {%- if c.featured_image != blank -%}
+                          {%- render 'atra-mega-card', url: childlink.url, image: c.featured_image, label: childlink.title -%}
+                          {%- assign shown = shown | plus: 1 -%}
+                        {%- endif -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
               </div>
             </details>
           </header-menu>

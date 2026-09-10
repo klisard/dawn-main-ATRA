@@ -1,0 +1,82 @@
+{%- comment -%}
+  Atra - breadcrumbs derived from a menu: Ballina / parent / current.
+  Works on collection and product templates.
+
+  Accepts:
+  - menu: {Object|String} a linklist object or a menu handle (default: main-menu)
+{%- endcomment -%}
+{%- liquid
+  if menu.links
+    assign nav = menu
+  else
+    assign nav = linklists[menu] | default: linklists['main-menu']
+  endif
+
+  if template.name == 'collection'
+    assign target_url = collection.url
+    assign current_title = collection.title
+  elsif template.name == 'product'
+    assign target_url = product.collections.first.url
+    assign current_title = product.title
+  else
+    assign target_url = nil
+    assign current_title = page.title
+  endif
+
+  assign l1 = nil
+  assign l2 = nil
+  assign l3 = nil
+  if target_url
+    for link in nav.links
+      if link.url == target_url
+        assign l1 = link
+      endif
+      for child in link.links
+        if child.url == target_url
+          assign l1 = link
+          assign l2 = child
+        endif
+        for gc in child.links
+          if gc.url == target_url
+            assign l1 = link
+            assign l2 = child
+            assign l3 = gc
+          endif
+        endfor
+      endfor
+    endfor
+  endif
+-%}
+
+<nav class="atra-breadcrumbs" aria-label="{{ 'atra.breadcrumbs.label' | t }}">
+  <ol class="atra-breadcrumbs__list list-unstyled" role="list">
+    <li><a href="{{ routes.root_url }}">{{ 'atra.breadcrumbs.home' | t }}</a></li>
+    {%- if l1 and l1.url != target_url -%}
+      <li>
+        {%- if l1.url != '#' and l1.url != blank -%}
+          <a href="{{ l1.url }}">{{ l1.title | escape }}</a>
+        {%- else -%}
+          <span>{{ l1.title | escape }}</span>
+        {%- endif -%}
+      </li>
+    {%- endif -%}
+    {%- if l2 and l2.url != target_url -%}
+      <li>
+        {%- if l2.url != '#' and l2.url != blank -%}
+          <a href="{{ l2.url }}">{{ l2.title | escape }}</a>
+        {%- else -%}
+          <span>{{ l2.title | escape }}</span>
+        {%- endif -%}
+      </li>
+    {%- endif -%}
+    {%- if template.name == 'product' and target_url -%}
+      {%- assign leaf = l3 | default: l2 | default: l1 -%}
+      {%- if leaf -%}
+        <li><a href="{{ target_url }}">{{ leaf.title | escape }}</a></li>
+      {%- else -%}
+        <li><a href="{{ target_url }}">{{ product.collections.first.title | escape }}</a></li>
+      {%- endif -%}
+    {%- endif -%}
+    <li aria-current="page"><span class="atra-breadcrumbs__current">{{ current_title | escape }}</span></li>
+  </ol>
+</nav>

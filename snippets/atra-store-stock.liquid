@@ -1,0 +1,21 @@
+{%- comment -%}
+  Atra - in-store stock box for the product page.
+  Used from the product template as a Custom Liquid block:
+    {% render 'atra-store-stock' %}
+  Re-renders on variant change through assets/atra-store-stock.js +
+  sections/atra-store-stock.liquid. Renders nothing until local pickup is
+  enabled for at least one location.
+{%- endcomment -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign has_pickup = current_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+
+{%- if has_pickup.size > 0 -%}
+  <script src="{{ 'atra-store-stock.js' | asset_url }}" defer="defer"></script>
+  <atra-store-stock
+    class="atra-stock-wrapper"
+    data-root-url="{{ routes.root_url }}"
+    data-variant-id="{{ current_variant.id }}"
+  >
+    {%- render 'atra-store-stock-list', variant: current_variant -%}
+  </atra-store-stock>
+{%- endif -%}

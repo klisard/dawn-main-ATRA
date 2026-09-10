@@ -1,75 +1,333 @@
 {
   "sections": {
-    "image_banner": {
+    "banner": {
       "type": "image-banner",
       "blocks": {
+        "eyebrow": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vjeshtë / Dimër 2026</p>",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Koleksioni i Ri",
+            "heading_size": "hxl"
           }
         },
-        "button": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Siluetë e qetë, tekstura natyrale dhe copë të përzgjedhura nga attrattivo, ONLY dhe DESIREE.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_label_1": "Blej koleksionin",
+            "button_link_1": "shopify://collections/koleksioni-i-ri",
+            "button_style_secondary_1": false,
+            "button_label_2": "Shiko lookbook",
+            "button_link_2": "shopify://collections/koleksioni-i-ri",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
+        "eyebrow",
         "heading",
-        "button"
+        "text",
+        "buttons"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 0,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "left",
         "show_text_below": false
       }
     },
-    "featured_collection": {
+    "countdown": {
+      "type": "atra-countdown",
+      "settings": {
+        "eyebrow": "Ulje sezonale",
+        "heading": "<p>Deri në <em>−50%</em> në artikuj të përzgjedhur</p>",
+        "deadline": "2026-10-01T23:59:59",
+        "hide_when_expired": false,
+        "link": "shopify://collections/ulje",
+        "link_label": "Shiko uljet",
+        "color_scheme": "scheme-3",
+        "accent": "#c9a98f",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "categories": {
+      "type": "atra-category-grid",
+      "blocks": {
+        "c1": {
+          "type": "collection",
+          "settings": {
+            "collection": "fustan"
+          }
+        },
+        "c2": {
+          "type": "collection",
+          "settings": {
+            "collection": "pallto"
+          }
+        },
+        "c3": {
+          "type": "collection",
+          "settings": {
+            "collection": "bluze"
+          }
+        },
+        "c4": {
+          "type": "collection",
+          "settings": {
+            "collection": "pantallona"
+          }
+        },
+        "c5": {
+          "type": "collection",
+          "settings": {
+            "collection": "te-gjithe-aksesoret"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Blej sipas kategorisë",
+        "heading": "",
+        "columns_desktop": 5,
+        "show_count": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 40
+      }
+    },
+    "new_in": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Mbërritje të reja",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "koleksioni-i-ri",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 72
+      }
+    },
+    "brands": {
+      "type": "atra-brand-shops",
+      "blocks": {
+        "b1": {
+          "type": "brand",
+          "settings": {
+            "collection": "attrattivo",
+            "title": "attrattivo",
+            "text": "Baza greke: trika, bluza dhe copë të lehta për çdo ditë.",
+            "cta": "Zbulo brendin"
+          }
+        },
+        "b2": {
+          "type": "brand",
+          "settings": {
+            "collection": "only",
+            "title": "ONLY",
+            "text": "Denim dhe siluetë e re daneze, përfshirë CARMAKOMA.",
+            "cta": "Zbulo brendin"
+          }
+        },
+        "b3": {
+          "type": "brand",
+          "settings": {
+            "collection": "desiree",
+            "title": "DESIREE",
+            "text": "Copë statement — lëkurë, fustane dhe pallto.",
+            "cta": "Zbulo brendin"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "eyebrow": "Dyqanet e brendeve",
+        "heading": "Tre shtëpi, një selektim",
+        "subtext": "Çdo brend ka faqen e vet: histori, siluetë dhe përmasat që i përshtaten.",
+        "color_scheme": "scheme-2",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "look": {
+      "type": "atra-shop-the-look",
+      "blocks": {
+        "i1": {
+          "type": "item",
+          "settings": {}
+        },
+        "i2": {
+          "type": "item",
+          "settings": {}
+        },
+        "i3": {
+          "type": "item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "image_position": "left",
+        "eyebrow": "Shop the look · Nr. 04",
+        "heading": "Kafe, kashmir dhe lëkurë",
+        "text": "<p>Një paletë e vetme, tre copë. Kombinim për ditë pune dhe darkë pa ndërruar veshje.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "services": {
+      "type": "atra-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "title": "Dërgesa 1–3 ditë",
+            "text": "<p>Shqipëri, Kosovë dhe Maqedoni. Falas mbi 8.000 Lek.</p>"
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "title": "Provë në dyqan",
+            "text": "<p>Rezervo online, provo në Tiranë, Fier ose Vlorë.</p>"
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "title": "Kthim brenda 14 ditësh",
+            "text": "<p>Pa pyetje, me faturë dhe etiketë të paprishur.</p>"
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "title": "Porosi me WhatsApp",
+            "text": "<p>Shkruaj +355 69 798 6902 — përgjigje brenda ditës.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "heading": "",
+        "columns_desktop": 4,
+        "show_numbers": true,
+        "color_scheme": "scheme-3",
+        "accent": "#c9a98f",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "instagram": {
+      "type": "atra-instagram",
+      "blocks": {
+        "u1": {
+          "type": "image",
+          "settings": {}
+        },
+        "u2": {
+          "type": "image",
+          "settings": {}
+        },
+        "u3": {
+          "type": "image",
+          "settings": {}
+        },
+        "u4": {
+          "type": "image",
+          "settings": {}
+        },
+        "u5": {
+          "type": "image",
+          "settings": {}
+        },
+        "u6": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4",
+        "u5",
+        "u6"
+      ],
+      "settings": {
+        "eyebrow": "@atra.albania",
+        "heading": "Ju në Atra",
+        "profile_url": "https://www.instagram.com/atra.albania/",
+        "columns_desktop": 6,
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "banner",
+    "countdown",
+    "categories",
+    "new_in",
+    "brands",
+    "look",
+    "services",
+    "instagram"
   ]
 }

@@ -1,0 +1,146 @@
+{%- comment -%}
+  Atra - PDP extras: size-guide link, reserve-in-store form, "ask on WhatsApp".
+
+  Used from the product template as a Custom Liquid block:
+    {% render 'atra-pdp-extras' %}
+
+  Reserve-in-store posts through Shopify's contact form (an email to the store).
+  Store list: local-pickup locations of the current variant when available,
+  otherwise Theme settings -> Atra -> Store names.
+{%- endcomment -%}
+
+{%- liquid
+  assign wa = settings.atra_whatsapp | default: '+355697986902'
+  assign wa_number = wa | remove: '+' | remove: ' ' | remove: '-'
+  assign guide_url = settings.atra_size_guide_url | default: '/pages/tabela-e-permasave'
+  assign product_url = shop.url | append: product.url
+  assign wa_text = 'atra.whatsapp.prefill' | t: product: product.title, url: product_url
+  assign current_variant = product.selected_or_first_available_variant
+  assign pickup_locations = current_variant.store_availabilities | where: 'pick_up_enabled', true
+  assign fallback_stores = settings.atra_store_names | default: 'Atra Tiranë,Atra Fier,Atra Vlorë' | split: ','
+-%}
+
+<div class="atra-pdp">
+  <a class="atra-pdp__guide" href="{{ guide_url }}">{{ 'atra.size_guide' | t }}</a>
+
+  <div class="atra-pdp__actions">
+    {%- if settings.atra_reserve_enabled -%}
+      <button type="button" class="button button--secondary" data-atra-reserve aria-controls="AtraReservePanel" aria-expanded="false">
+        {{ 'atra.reserve.title' | t }}
+      </button>
+    {%- endif -%}
+    <a
+      class="button button--secondary atra-pdp__wa"
+      href="https://wa.me/{{ wa_number }}?text={{ wa_text | url_encode }}"
+      target="_blank"
+      rel="noopener"
+    >
+      {{ 'atra.whatsapp.ask' | t }}
+    </a>
+  </div>
+
+  {%- if settings.atra_reserve_enabled -%}
+    <details class="atra-pdp__reserve" id="AtraReservePanel" data-atra-reserve-panel>
+      <summary class="atra-pdp__reserve-summary">{{ 'atra.reserve.title' | t }}</summary>
+      <p class="atra-pdp__reserve-note">{{ 'atra.reserve.note' | t }}</p>
+      {%- form 'contact', id: 'AtraReserveForm', class: 'atra-pdp__form' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="form-status form-status-list form__message atra-pdp__ok" tabindex="-1" autofocus>
+            {{- 'icon-success.svg' | inline_asset_content -}}
+            {{ 'atra.reserve.success' | t }}
+          </p>
+        {%- elsif form.errors -%}
+          <p class="form-status caption-large text-body form__message" role="alert" tabindex="-1" autofocus>
+            {{- 'icon-error.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </p>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[{{ 'atra.reserve.field_product' | t }}]" value="{{ product.title | escape }}">
+        <input type="hidden" name="contact[{{ 'atra.reserve.field_link' | t }}]" value="{{ shop.url }}{{ product.url }}">
+        <input
+          type="hidden"
+          name="contact[{{ 'atra.reserve.field_variant' | t }}]"
+          value="{{ current_variant.title | escape }}"
+          data-atra-reserve-variant
+        >
+        <input type="hidden" name="contact[email]" value="{{ shop.email | default: 'shopping@atra.al' }}">
+
+        <div class="atra-field">
+          <label class="visually-hidden" for="AtraReserve-store">{{ 'atra.reserve.store' | t }}</label>
+          <select id="AtraReserve-store" name="contact[{{ 'atra.reserve.store' | t }}]" class="atra-field__input atra-field__select" required>
+            {%- if pickup_locations.size > 0 -%}
+              {%- for a in pickup_locations -%}
+                <option value="{{ a.location.name | escape }}">{{ a.location.name | escape }}</option>
+              {%- endfor -%}
+            {%- else -%}
+              {%- for s in fallback_stores -%}
+                {%- assign st = s | strip -%}
+                {%- if st != blank -%}
+                  <option value="{{ st | escape }}">{{ st | escape }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          </select>
+        </div>
+        <div class="atra-field">
+          <label class="visually-hidden" for="AtraReserve-name">{{ 'atra.reserve.name' | t }}</label>
+          <input
+            type="text"
+            id="AtraReserve-name"
+            name="contact[{{ 'atra.reserve.name' | t }}]"
+            placeholder="{{ 'atra.reserve.name' | t }}"
+            class="atra-field__input"
+            autocomplete="name"
+            value="{% if customer %}{{ customer.name }}{% endif %}"
+            required
+          >
+        </div>
+        <div class="atra-field">
+          <label class="visually-hidden" for="AtraReserve-phone">{{ 'atra.reserve.phone' | t }}</label>
+          <input
+            type="tel"
+            id="AtraReserve-phone"
+            name="contact[{{ 'atra.reserve.phone' | t }}]"
+            placeholder="{{ 'atra.reserve.phone' | t }}"
+            class="atra-field__input"
+            autocomplete="tel"
+            required
+          >
+        </div>
+        <button type="submit" class="button button--primary atra-pdp__submit">{{ 'atra.reserve.submit' | t }}</button>
+      {%- endform -%}
+    </details>
+  {%- endif -%}
+</div>
+
+<script>
+  (function () {
+    var init = function () {
+      var panel = document.querySelector('[data-atra-reserve-panel]');
+      document.querySelectorAll('[data-atra-reserve]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (!panel) return;
+          panel.open = true;
+          btn.setAttribute('aria-expanded', 'true');
+          var field = panel.querySelector('select');
+          if (field) field.focus();
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      });
+
+      var variantField = document.querySelector('[data-atra-reserve-variant]');
+      if (variantField && window.subscribe && window.PUB_SUB_EVENTS) {
+        window.subscribe(window.PUB_SUB_EVENTS.variantChange, function (event) {
+          var variant = event && event.data && event.data.variant;
+          variantField.value = variant ? variant.title : '';
+        });
+      }
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>

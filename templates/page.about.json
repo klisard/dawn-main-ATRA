@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "hero": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Rreth Atra",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "small"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Veshje që zgjat më shumë se sezoni",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Atra lindi si një dyqan i vogël në Tiranë me një ide të thjeshtë: të zgjedhim më pak, por më mirë. Sot jemi tre dyqane dhe një selektim me brende evropiane që ndajnë të njëjtën gjuhë — copë të qeta, materiale të vërteta, përmasa reale.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 56
+      }
+    },
+    "about_image": {
+      "type": "image-banner",
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "values": {
+      "type": "atra-columns",
+      "blocks": {
+        "v1": {
+          "type": "column",
+          "settings": {
+            "title": "Dërgesa 1–3 ditë",
+            "text": "<p>Shqipëri, Kosovë dhe Maqedoni. Falas mbi 8.000 Lek.</p>"
+          }
+        },
+        "v2": {
+          "type": "column",
+          "settings": {
+            "title": "Provë në dyqan",
+            "text": "<p>Rezervo online, provo në Tiranë, Fier ose Vlorë.</p>"
+          }
+        },
+        "v3": {
+          "type": "column",
+          "settings": {
+            "title": "Kthim brenda 14 ditësh",
+            "text": "<p>Pa pyetje, me faturë dhe etiketë të paprishur.</p>"
+          }
+        },
+        "v4": {
+          "type": "column",
+          "settings": {
+            "title": "Porosi me WhatsApp",
+            "text": "<p>Shkruaj +355 69 798 6902 — përgjigje brenda ditës.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "settings": {
+        "heading": "",
+        "columns_desktop": 4,
+        "narrow": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 88
+      }
+    },
+    "quote": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>“Nuk shesim trende. Shesim copë që i mbani edhe vitin tjetër.”</em>",
+            "heading_size": "h1"
+          }
+        },
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ekipi Atra",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "small"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "caption"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "about_image",
+    "values",
+    "quote"
+  ]
+}

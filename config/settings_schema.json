@@ -1466,5 +1466,56 @@
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
       }
     ]
+  },
+  {
+    "name": "Atra",
+    "settings": [
+      {
+        "type": "header",
+        "content": "WhatsApp"
+      },
+      {
+        "type": "text",
+        "id": "atra_whatsapp",
+        "label": "WhatsApp number",
+        "info": "International format, e.g. +355697986902",
+        "default": "+355697986902"
+      },
+      {
+        "type": "text",
+        "id": "atra_whatsapp_message",
+        "label": "Default message",
+        "default": "Përshëndetje, kam një pyetje."
+      },
+      {
+        "type": "checkbox",
+        "id": "atra_whatsapp_float",
+        "label": "Show floating WhatsApp button",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Product page"
+      },
+      {
+        "type": "url",
+        "id": "atra_size_guide_url",
+        "label": "Size guide page",
+        "info": "Defaults to /pages/tabela-e-permasave"
+      },
+      {
+        "type": "checkbox",
+        "id": "atra_reserve_enabled",
+        "label": "Show \"Reserve in store\"",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "atra_store_names",
+        "label": "Store names (comma separated)",
+        "info": "Used by the reserve-in-store form when local pickup locations are not available.",
+        "default": "Atra Tiranë,Atra Fier,Atra Vlorë"
+      }
+    ]
   }
 ]

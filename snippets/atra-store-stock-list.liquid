@@ -1,0 +1,71 @@
+{%- comment -%}
+  Atra - "Gjendja në dyqane": one row per local-pickup location for a variant.
+
+  Accepts:
+  - variant: {Object} the variant to report on
+
+  Shared by snippets/atra-store-stock.liquid (initial render) and
+  sections/atra-store-stock.liquid (re-rendered on variant change).
+  Requires local pickup to be enabled for the locations (Settings -> Shipping).
+{%- endcomment -%}
+{%- liquid
+  assign availabilities = variant.store_availabilities | where: 'pick_up_enabled', true
+  assign prod = variant.product
+
+  comment
+    Find the option that holds sizes so we can list which sizes each store has.
+  endcomment
+  assign size_index = -1
+  for opt in prod.options
+    assign opt_name = opt | downcase
+    if opt_name contains 'mas' or opt_name contains 'size' or opt_name contains 'përmas' or opt_name contains 'permas'
+      assign size_index = forloop.index0
+    endif
+  endfor
+  assign option_count = prod.options.size
+  assign last_index = option_count | minus: 1
+-%}
+
+{%- if availabilities.size > 0 -%}
+  <div class="atra-stock">
+    <p class="atra-stock__title">{{ 'atra.stock.title' | t }}</p>
+    <ul class="atra-stock__rows list-unstyled" role="list">
+      {%- for a in availabilities -%}
+        {%- liquid
+          assign sizes = ''
+          if size_index > -1
+            for v in prod.variants
+              assign same_style = true
+              for i in (0..last_index)
+                if i != size_index and v.options[i] != variant.options[i]
+                  assign same_style = false
+                endif
+              endfor
+              if same_style
+                for sa in v.store_availabilities
+                  if sa.location.name == a.location.name and sa.available
+                    assign sizes = sizes | append: ' ' | append: v.options[size_index]
+                  endif
+                endfor
+              endif
+            endfor
+            assign sizes = sizes | strip
+          endif
+        -%}
+        <li class="atra-stock__row">
+          <span class="atra-stock__store">{{ a.location.name | escape }}</span>
+          {%- if a.available -%}
+            <span class="atra-stock__state atra-stock__state--in">
+              {{- 'atra.stock.in' | t -}}
+              {%- if sizes != blank %} · {{ sizes | escape }}{% endif -%}
+            </span>
+          {%- elsif sizes != blank -%}
+            <span class="atra-stock__state atra-stock__state--only">{{ 'atra.stock.only' | t: sizes: sizes }}</span>
+          {%- else -%}
+            <span class="atra-stock__state atra-stock__state--out">{{ 'atra.stock.out' | t }}</span>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

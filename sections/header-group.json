@@ -5,27 +5,41 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
+        "color_scheme": "scheme-3",
+        "show_line_separator": false,
         "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
+        "auto_rotate": true,
+        "change_slides_speed": 6,
         "enable_country_selector": false,
         "enable_language_selector": false
       },
       "blocks": {
-        "announcement-bar-0": {
+        "ann-1": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
+            "text": "Dërgesa Shqipëri · Kosovë · Maqedoni",
             "link": ""
+          }
+        },
+        "ann-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "Dërgesa falas mbi 8.000 Lek",
+            "link": ""
+          }
+        },
+        "ann-3": {
+          "type": "announcement",
+          "settings": {
+            "text": "WhatsApp +355 69 798 6902",
+            "link": "https://wa.me/355697986902"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "ann-1",
+        "ann-2",
+        "ann-3"
       ]
     },
     "header": {
@@ -35,15 +49,15 @@
         "menu_color_scheme": "scheme-1",
         "logo_position": "middle-left",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "always",
         "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     }
   },

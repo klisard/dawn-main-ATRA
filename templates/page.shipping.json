@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "faq": {
+      "type": "atra-faq",
+      "blocks": {
+        "r1": { "type": "rate", "settings": { "label": "Shqipëri", "value": "300 Lek" } },
+        "r2": { "type": "rate", "settings": { "label": "Mbi 8.000 Lek", "value": "Falas" } },
+        "r3": { "type": "rate", "settings": { "label": "Kosovë", "value": "600 Lek" } },
+        "r4": { "type": "rate", "settings": { "label": "Maqedoni", "value": "700 Lek" } },
+        "q1": {
+          "type": "question",
+          "settings": {
+            "heading": "Sa kohë zgjat dërgesa?",
+            "content": "<p>Tiranë 24 orë, qytetet e tjera 1–3 ditë pune. Kosovë dhe Maqedoni 2–5 ditë pune.</p>",
+            "open": true
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "heading": "Sa kushton dërgesa?",
+            "content": "<p>300 Lek brenda Shqipërisë, falas për porosi mbi 8.000 Lek. Kosovë 600 Lek, Maqedoni 700 Lek.</p>",
+            "open": false
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "heading": "Si mund t’i kthej artikujt?",
+            "content": "<p>Brenda 14 ditësh, me etiketë të paprishur dhe faturë. Kthimi kryhet në dyqan ose me postë.</p>",
+            "open": false
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "heading": "Mund të ndërroj përmasën?",
+            "content": "<p>Po — ndërrimi i përmasës është falas një herë për porosi, në varësi të stokut.</p>",
+            "open": false
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "heading": "Si paguaj?",
+            "content": "<p>Kartë (Visa, Mastercard), pagesë në dorëzim, ose bankë. Të gjitha çmimet me TVSH.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "heading": "Dërgesa & kthimi",
+        "intro": "<p>Shqipëri, Kosovë dhe Maqedoni. Kthim brenda 14 ditësh.</p>",
+        "aside_title": "Tarifat",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": ["faq"]
+}

@@ -1,0 +1,58 @@
+{%- comment -%}
+  Atra - image sub-category chips for deep category trees.
+  Renders the sibling links of the menu entry that points at the current
+  collection (or its children when the current collection is a parent).
+
+  Accepts:
+  - menu: {Object|String} a linklist object or a menu handle (default: main-menu)
+{%- endcomment -%}
+{%- liquid
+  if menu.links
+    assign nav = menu
+  else
+    assign nav = linklists[menu] | default: linklists['main-menu']
+  endif
+
+  assign current = nil
+  for link in nav.links
+    if link.url == collection.url and link.links.size > 0
+      assign current = link
+    endif
+    for child in link.links
+      if child.url == collection.url
+        if child.links.size > 0
+          assign current = child
+        else
+          assign current = link
+        endif
+      endif
+      for gc in child.links
+        if gc.url == collection.url
+          assign current = child
+        endif
+      endfor
+    endfor
+  endfor
+-%}
+
+{%- if current and current.links.size > 0 -%}
+  <nav class="atra-subnav" aria-label="{{ 'atra.subnav.label' | t }}">
+    {%- for child in current.links -%}
+      {%- assign c = child.object -%}
+      <a
+        class="atra-subnav__chip{% if child.url == collection.url %} atra-subnav__chip--on{% endif %}"
+        href="{{ child.url }}"
+        {% if child.url == collection.url %}aria-current="page"{% endif %}
+      >
+        {%- if c.featured_image != blank -%}
+          {{
+            c.featured_image
+            | image_url: width: 120
+            | image_tag: loading: 'lazy', widths: '60,120', alt: '', class: 'atra-subnav__img'
+          }}
+        {%- endif -%}
+        <span>{{ child.title | escape }}</span>
+      </a>
+    {%- endfor -%}
+  </nav>
+{%- endif -%}

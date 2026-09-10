@@ -1,0 +1,139 @@
+{%- comment -%} Atra - size guide table (rows are blocks) {%- endcomment -%}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign cols = section.settings.columns | split: ',' -%}
+
+<div class="atra-size color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width atra-size__inner section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="atra-size__heading">{{ section.settings.heading | escape }}</h1>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <div class="atra-size__intro rte">{{ section.settings.intro }}</div>
+    {%- endif -%}
+
+    <div class="atra-table__wrap">
+      <table class="atra-table">
+        <thead>
+          <tr>
+            {%- for col in cols -%}
+              <th scope="col">{{ col | strip | escape }}</th>
+            {%- endfor -%}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'row' -%}
+              <tr {{ block.shopify_attributes }}>
+                <th scope="row">{{ block.settings.size | escape }}</th>
+                <td>{{ block.settings.c1 | escape }}</td>
+                <td>{{ block.settings.c2 | escape }}</td>
+                <td>{{ block.settings.c3 | escape }}</td>
+                <td class="atra-table__mute">{{ block.settings.c4 | escape }}</td>
+              </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Atra size guide",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tabela e përmasave"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro",
+      "default": "<p>Matjet janë në centimetra, të trupit — jo të veshjes. Në dyshim, zgjidh përmasën më të madhe: ndërrimi i parë është falas.</p>"
+    },
+    {
+      "type": "text",
+      "id": "columns",
+      "label": "Column headings (comma separated, 5)",
+      "default": "Përmasa,Gjoks,Bel,Vithe,IT"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Size row",
+      "settings": [
+        { "type": "text", "id": "size", "label": "Size", "default": "M" },
+        { "type": "text", "id": "c1", "label": "Column 2", "default": "88–92" },
+        { "type": "text", "id": "c2", "label": "Column 3", "default": "68–72" },
+        { "type": "text", "id": "c3", "label": "Column 4", "default": "94–98" },
+        { "type": "text", "id": "c4", "label": "Column 5", "default": "40" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Atra size guide",
+      "blocks": [
+        { "type": "row", "settings": { "size": "XS", "c1": "80–84", "c2": "60–64", "c3": "86–90", "c4": "36" } },
+        { "type": "row", "settings": { "size": "S", "c1": "84–88", "c2": "64–68", "c3": "90–94", "c4": "38" } },
+        { "type": "row", "settings": { "size": "M", "c1": "88–92", "c2": "68–72", "c3": "94–98", "c4": "40" } },
+        { "type": "row", "settings": { "size": "L", "c1": "92–97", "c2": "72–78", "c3": "98–103", "c4": "42" } },
+        { "type": "row", "settings": { "size": "XL", "c1": "97–102", "c2": "78–84", "c3": "103–108", "c4": "44" } },
+        { "type": "row", "settings": { "size": "XXL", "c1": "102–108", "c2": "84–90", "c3": "108–114", "c4": "46" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

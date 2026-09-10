@@ -2,9 +2,38 @@
   "sections": {
     "main": {
       "type": "main-404"
+    },
+    "404_text": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ndoshta artikulli u shit ose linku ka ndryshuar. Provo koleksionin e ri.</p>"
+          }
+        },
+        "buttons": {
+          "type": "button",
+          "settings": {
+            "button_label": "Koleksioni i Ri",
+            "button_link": "shopify://collections/koleksioni-i-ri",
+            "button_style_secondary": false,
+            "button_label_2": "Ballina",
+            "button_link_2": "shopify://",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["text", "buttons"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main", "404_text"]
 }

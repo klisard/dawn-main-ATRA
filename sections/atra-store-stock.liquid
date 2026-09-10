@@ -1,0 +1,16 @@
+{% comment %}
+  Atra - internal section. Not placeable in the editor (no presets).
+  Fetched by assets/atra-store-stock.js through the Section Rendering API:
+    {{ routes.root_url }}variants/<variant id>/?section_id=atra-store-stock
+  Same mechanism Dawn uses for sections/pickup-availability.liquid.
+{% endcomment %}
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{%- render 'atra-store-stock-list', variant: product_variant -%}
+{% comment %}theme-check-enable UndefinedObject{% endcomment %}
+
+{% schema %}
+{
+  "name": "Atra stock (internal)",
+  "settings": []
+}
+{% endschema %}

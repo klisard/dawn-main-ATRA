@@ -1,0 +1,25 @@
+{% comment %}
+  Atra - internal section. Not placeable in the editor (no presets).
+  Renders one Dawn product card for the "recently viewed" strip through the
+  Section Rendering API:  /products/<handle>?section_id=atra-product-card
+{% endcomment %}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- if product != blank -%}
+  {% render 'card-product',
+    card_product: product,
+    media_aspect_ratio: 'portrait',
+    show_secondary_image: true,
+    show_vendor: true,
+    lazy_load: true,
+    section_id: section.id
+  %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Atra card (internal)",
+  "settings": []
+}
+{% endschema %}

@@ -528,5 +528,51 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "atra": {
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Min",
+      "seconds": "Sec"
+    },
+    "reserve": {
+      "title": "Reserve in store",
+      "note": "Choose a store — held for 48 hours, no prepayment.",
+      "store": "Store",
+      "name": "Name",
+      "phone": "Phone",
+      "submit": "Reserve",
+      "success": "Thank you — we will contact you today.",
+      "field_product": "Product",
+      "field_link": "Link",
+      "field_variant": "Variant"
+    },
+    "whatsapp": {
+      "ask": "Ask on WhatsApp",
+      "prefill": "Hello, I have a question about: {{ product }} — {{ url }}",
+      "float_label": "Chat with us on WhatsApp"
+    },
+    "size_guide": "Size guide",
+    "stock": {
+      "title": "In-store availability",
+      "in": "In stock",
+      "out": "Out of stock",
+      "only": "Only {{ sizes }}"
+    },
+    "description": "Description",
+    "breadcrumbs": {
+      "home": "Home",
+      "label": "Breadcrumbs"
+    },
+    "subnav": {
+      "label": "Sub-categories"
+    },
+    "contact": {
+      "subject": "Subject"
+    },
+    "look": {
+      "pick_product": "Pick a product"
+    }
   }
 }
