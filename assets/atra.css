@@ -978,6 +978,15 @@ cart-drawer .cart-drawer__collection { background: var(--atra-paper-2); }
 .footer__localization,
 .footer .localization-form .disclosure__button { color: var(--atra-cream); }
 
+/* Footer: one row of blocks on desktop, text-block links look like menu links */
+@media screen and (min-width: 990px) {
+  .footer .footer__content-top .footer__blocks-wrapper { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); column-gap: 3rem; }
+  .footer .footer__blocks-wrapper .footer-block.grid__item { width: 100%; max-width: none; }
+}
+.footer-block__details-content .rte a { color: var(--atra-cream); text-decoration: none; display: inline-block; padding: 0.3rem 0; }
+.footer-block__details-content .rte a:hover { color: var(--atra-gold); }
+.footer-block__details-content .rte p { line-height: 1.9; }
+
 /* Footer on phones: compact blocks, hide headings of empty menus */
 .footer-block--menu:not(:has(li)) { display: none; }
 @media screen and (max-width: 749px) {
