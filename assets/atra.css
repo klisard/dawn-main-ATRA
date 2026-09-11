@@ -1212,8 +1212,8 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   .atra-box { padding: 1.8rem; }
 }
 
-/* Hero eyebrow lives inside the heading (Dawn allows one text block per banner) */
-.atra-hero__eyebrow {
+/* Hero eyebrow: first bold line of the banner text block (Dawn allows one text block per banner) */
+.banner__text strong:first-child {
   display: block;
   font-family: var(--atra-body);
   font-weight: 400;
@@ -1221,5 +1221,6 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   letter-spacing: 0.26em;
   text-transform: uppercase;
   opacity: 0.85;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
 }
+.banner__text strong:first-child + br { display: none; }

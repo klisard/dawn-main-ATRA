@@ -6,14 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<span class=\"atra-hero__eyebrow\">Vjeshtë / Dimër 2026</span>Koleksioni i Ri",
+            "heading": "Koleksioni i Ri",
             "heading_size": "hxl"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Siluetë e qetë, tekstura natyrale dhe copë të përzgjedhura nga attrattivo, ONLY dhe DESIREE.</p>",
+            "text": "<p><strong>Vjeshtë / Dimër 2026</strong><br>Siluetë e qetë, tekstura natyrale dhe copë të përzgjedhura nga attrattivo, ONLY dhe DESIREE.</p>",
             "text_style": "body"
           }
         },
