@@ -1211,3 +1211,15 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   .atra-stores__body { padding: 1.8rem; }
   .atra-box { padding: 1.8rem; }
 }
+
+/* Hero eyebrow lives inside the heading (Dawn allows one text block per banner) */
+.atra-hero__eyebrow {
+  display: block;
+  font-family: var(--atra-body);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 1.8rem;
+}

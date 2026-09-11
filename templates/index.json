@@ -3,17 +3,10 @@
     "banner": {
       "type": "image-banner",
       "blocks": {
-        "eyebrow": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Vjeshtë / Dimër 2026</p>",
-            "text_style": "caption-with-letter-spacing"
-          }
-        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Koleksioni i Ri",
+            "heading": "<span class=\"atra-hero__eyebrow\">Vjeshtë / Dimër 2026</span>Koleksioni i Ri",
             "heading_size": "hxl"
           }
         },
@@ -37,7 +30,6 @@
         }
       },
       "block_order": [
-        "eyebrow",
         "heading",
         "text",
         "buttons"
