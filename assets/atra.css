@@ -285,6 +285,8 @@ button.shopify-payment-button__button--unbranded,
 .header-wrapper--border-bottom { border-bottom: 1px solid var(--atra-line); }
 .header { padding-left: var(--atra-gutter); padding-right: var(--atra-gutter); }
 .header__heading-logo { max-width: 13.2rem; }
+.header__heading-logo-wrapper { display: block; }
+.header__heading-logo { width: 100%; height: auto; }
 .header__heading-link .h2,
 .header__heading-link,
 .header__heading {
@@ -307,6 +309,9 @@ button.shopify-payment-button__button--unbranded,
   color: var(--atra-ink);
   padding: 1rem 1.2rem;
 }
+.header__inline-menu summary.list-menu__item { padding-right: 2.6rem; }
+.header__inline-menu summary.list-menu__item .icon-caret { right: 1.1rem; width: 0.9rem; height: 0.6rem; opacity: 0.7; }
+.header__inline-menu details[open] > summary.list-menu__item .icon-caret { transform: rotate(180deg); }
 .header__menu-item span { border-bottom: 1px solid transparent; padding-bottom: 0.2rem; transition: border-color 0.2s var(--atra-ease); }
 .header__menu-item:hover span,
 .header__menu-item .header__active-menu-item {
@@ -432,15 +437,13 @@ button.shopify-payment-button__button--unbranded,
 }
 
 /* ---------- 7. Hero banner ------------------------------------ */
-.banner__media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top, rgba(24, 21, 19, 0.82) 0%, rgba(24, 21, 19, 0.6) 34%, rgba(24, 21, 19, 0.28) 62%, rgba(24, 21, 19, 0.06) 100%);
-  pointer-events: none;
+/* Dawn paints its overlay via .banner__media::after (opacity from the section setting).
+   Turn that flat black into a bottom-heavy gradient; the section keeps opacity 100. */
+.banner .banner__media.media::after {
+  background: linear-gradient(to top, rgba(24, 21, 19, 0.85) 0%, rgba(24, 21, 19, 0.6) 34%, rgba(24, 21, 19, 0.25) 62%, rgba(24, 21, 19, 0.05) 100%);
 }
-.banner__media.media::before { display: none; }
+.banner .banner__media.media::before { display: none; }
+.banner__box { text-shadow: 0 1px 24px rgba(24, 21, 19, 0.35); }
 .banner__box { max-width: 62rem; padding-left: 0; }
 .banner__content { padding-left: var(--atra-gutter); padding-right: var(--atra-gutter); }
 .banner__text { font-weight: 300; font-size: clamp(1.5rem, 1.5vw, 1.8rem); line-height: 1.6; max-width: 44ch; }
@@ -866,10 +869,10 @@ main[data-template='cart'] .cart__title,
 .cart__ctas { margin-top: 2.2rem; }
 .cart__checkout-button { width: 100%; min-height: 5.4rem; }
 .cart__empty-text { font-family: var(--atra-display); font-weight: 300; font-size: clamp(2.8rem, 4vw, 4.4rem); }
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1200px) {
   main[data-template='cart'] {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(26rem, 34rem);
+    grid-template-columns: minmax(0, 1fr) minmax(30rem, 36rem);
     column-gap: clamp(2.4rem, 3vw, 5.6rem);
     align-items: start;
     max-width: var(--page-width);
@@ -877,13 +880,15 @@ main[data-template='cart'] .cart__title,
     padding: 0 5rem;
   }
   main[data-template='cart'] > .shopify-section { min-width: 0; }
-  main[data-template='cart'] .cart-items,
-  main[data-template='cart'] .cart__footer { padding-left: 0; padding-right: 0; max-width: none; }
+  main[data-template='cart'] .page-width { max-width: none; padding-left: 0; padding-right: 0; }
   main[data-template='cart'] .cart__footer-wrapper { position: sticky; top: 9.6rem; }
-  main[data-template='cart'] .cart__footer { display: block; }
+  main[data-template='cart'] .cart__footer { display: block; padding-top: 0; }
   main[data-template='cart'] .cart__footer > div { width: 100%; }
   main[data-template='cart'] .cart__warnings { grid-column: 1 / -1; }
   main[data-template='cart'] .is-empty ~ .shopify-section .cart__footer { display: none; }
+}
+.cart-item__media { min-width: 10rem; }
+.cart-item__details { min-width: 16rem; }
 }
 
 /* Cart drawer */
@@ -1232,6 +1237,7 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   .product__info-wrapper { padding-left: 0; }
 }
 @media screen and (max-width: 749px) {
+  .product-form__input input[type='radio'] + label { min-width: 4.4rem; padding: 1rem 0.6rem; margin-right: 0.6rem; font-size: 1.15rem; }
   .announcement-bar__message, .utility-bar p, .utility-bar a { font-size: 0.95rem; letter-spacing: 0.14em; padding-top: 0.9rem; padding-bottom: 0.9rem; }
   .atra-countdown__inner { justify-content: flex-start; }
   .atra-countdown__unit { min-width: 5.2rem; }

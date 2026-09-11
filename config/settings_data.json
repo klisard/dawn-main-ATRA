@@ -2,7 +2,7 @@
   "current": "Dawn",
   "presets": {
     "Dawn": {
-      "logo_width": 90,
+      "logo_width": 110,
       "customer_account_menu": "customer-account-main-menu",
       "color_schemes": {
         "scheme-1": {
@@ -196,7 +196,9 @@
       "atra_whatsapp_float": true,
       "atra_size_guide_url": "/pages/tabela-e-permasave",
       "atra_reserve_enabled": true,
-      "atra_store_names": "Atra Tiranë,Atra Fier,Atra Vlorë"
+      "atra_store_names": "Atra Tiranë,Atra Fier,Atra Vlorë",
+      "logo": "shopify://shop_images/Untitled_design__14_-removebg-preview.png",
+      "favicon": "shopify://shop_images/atralogo.webp"
     }
   }
 }
