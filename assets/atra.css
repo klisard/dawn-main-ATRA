@@ -1223,4 +1223,4 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   opacity: 0.85;
   margin-bottom: 1.2rem;
 }
-.banner__text strong:first-child + br { display: none; }
+.banner__text strong:first-child { margin-bottom: 1.4rem; }
