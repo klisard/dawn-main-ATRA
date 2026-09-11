@@ -511,7 +511,7 @@ s.price-item--regular {
 }
 .card__badge.top { top: 1.4rem; }
 .card__badge.left { left: 0; }
-.product-grid { column-gap: clamp(1rem, 1.4vw, 2rem); row-gap: clamp(2.4rem, 3vw, 3.6rem); }
+.product-grid { row-gap: clamp(2.4rem, 3vw, 3.6rem); }
 
 /* Section headings with view-all link (featured collection) */
 .collection__title.title-wrapper,
@@ -664,7 +664,7 @@ s.price-item--regular {
   .facets-vertical .facets-wrapper .facets__form-vertical { position: sticky; top: 10rem; }
   .facets-vertical .facets-vertical-form { gap: clamp(2rem, 3vw, 4.4rem); }
 }
-.collection .product-grid { column-gap: clamp(1rem, 1.4vw, 1.8rem); row-gap: clamp(2.4rem, 3vw, 3.4rem); }
+.collection .product-grid { row-gap: clamp(2.4rem, 3vw, 3.4rem); }
 
 /* Pagination as the design's outlined button row */
 .pagination__list { gap: 0.6rem; }
@@ -978,6 +978,17 @@ cart-drawer .cart-drawer__collection { background: var(--atra-paper-2); }
 .footer__localization,
 .footer .localization-form .disclosure__button { color: var(--atra-cream); }
 
+/* Footer on phones: compact blocks, hide headings of empty menus */
+.footer-block--menu:not(:has(li)) { display: none; }
+@media screen and (max-width: 749px) {
+  .footer .footer-block.grid__item { margin: 2rem 0; }
+  .footer .footer-block__heading { margin-bottom: 1rem; }
+  .footer__blocks-wrapper { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; }
+  .footer__blocks-wrapper .footer-block:first-child, .footer__blocks-wrapper .footer-block:last-child { grid-column: 1 / -1; }
+  .footer__content-bottom-wrapper { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
+  .footer__copyright { text-align: left; }
+}
+
 /* ---------- 15. Custom sections ------------------------------- */
 /* Countdown */
 .atra-countdown { display: block; }
@@ -1208,6 +1219,7 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   .product__info-wrapper { padding-left: 0; }
 }
 @media screen and (max-width: 749px) {
+  .announcement-bar__message, .utility-bar p, .utility-bar a { font-size: 0.95rem; letter-spacing: 0.14em; padding-top: 0.9rem; padding-bottom: 0.9rem; }
   .atra-countdown__inner { justify-content: flex-start; }
   .atra-countdown__unit { min-width: 5.2rem; }
   .atra-brands__body { padding: 1.8rem 1.8rem 2.2rem; }

@@ -49,21 +49,21 @@
           "type": "link_list",
           "settings": {
             "heading": "Blej",
-            "menu": "footer-blej"
+            "menu": "main-menu"
           }
         },
         "help": {
           "type": "link_list",
           "settings": {
             "heading": "Ndihmë",
-            "menu": "footer-ndihme"
+            "menu": "footer"
           }
         },
         "atra": {
-          "type": "link_list",
+          "type": "text",
           "settings": {
             "heading": "Atra",
-            "menu": "footer-atra"
+            "subtext": "<p><a href=\"/pages/rreth-nesh\">Rreth nesh</a><br/><a href=\"/pages/dyqanet\">Dyqanet tona</a><br/><a href=\"/pages/tabela-e-permasave\">Tabela e përmasave</a><br/><a href=\"/pages/dergesa-dhe-kthimi\">Dërgesa &amp; kthimi</a></p>"
           }
         },
         "contact": {
