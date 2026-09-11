@@ -28,10 +28,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Blej koleksionin",
-            "button_link_1": "shopify://collections/koleksioni-i-ri",
+            "button_link_1": "/collections/koleksioni-i-ri",
             "button_style_secondary_1": false,
             "button_label_2": "Shiko lookbook",
-            "button_link_2": "shopify://collections/koleksioni-i-ri",
+            "button_link_2": "/collections/koleksioni-i-ri",
             "button_style_secondary_2": true
           }
         }
@@ -62,7 +62,7 @@
         "heading": "<p>Deri në <em>−50%</em> në artikuj të përzgjedhur</p>",
         "deadline": "2026-10-01T23:59:59",
         "hide_when_expired": false,
-        "link": "shopify://collections/ulje",
+        "link": "/collections/ulje",
         "link_label": "Shiko uljet",
         "color_scheme": "scheme-3",
         "accent": "#c9a98f",

@@ -16,10 +16,10 @@
           "type": "button",
           "settings": {
             "button_label": "Koleksioni i Ri",
-            "button_link": "shopify://collections/koleksioni-i-ri",
+            "button_link": "/collections/koleksioni-i-ri",
             "button_style_secondary": false,
             "button_label_2": "Ballina",
-            "button_link_2": "shopify://",
+            "button_link_2": "/",
             "button_style_secondary_2": true
           }
         }
