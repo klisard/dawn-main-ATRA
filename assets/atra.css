@@ -1090,6 +1090,7 @@ cart-drawer .cart-drawer__collection { background: var(--atra-paper-2); }
 .atra-look__price { white-space: nowrap; }
 .atra-look__price .price { font-size: 1.4rem; }
 .atra-look__price .price dl { justify-content: flex-end; }
+.atra-look__cta { margin-top: 2.4rem; }
 
 /* Services */
 .atra-services__heading { margin: 0 0 3rem; }

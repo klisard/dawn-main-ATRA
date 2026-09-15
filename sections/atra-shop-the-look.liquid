@@ -77,6 +77,10 @@
           {%- endif -%}
         {%- endfor -%}
       </div>
+
+      {%- if section.settings.link != blank and section.settings.link_label != blank -%}
+        <a class="atra-link atra-look__cta" href="{{ section.settings.link }}">{{ section.settings.link_label | escape }}</a>
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -122,6 +126,18 @@
       "id": "text",
       "label": "Text",
       "default": "<p>Çdo javë një kombinim i ri nga koleksioni, i zgjedhur nga ekipi Atra. Të gjitha copët poshtë fotos.</p>"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link",
+      "info": "Optional, e.g. the outlet collection"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Button label",
+      "default": "Shiko të gjitha"
     },
     {
       "type": "color_scheme",
