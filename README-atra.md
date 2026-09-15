@@ -91,10 +91,10 @@ line/block, then push. Shopify syncs the commit to the connected theme.
    | Page | Handle | Template |
    |---|---|---|
    | Rreth nesh | `rreth-nesh` | `page.about` |
-   | Dyqanet tona | `dyqanet` | `page.stores` |
+   | Dyqanet tona | `dyqanet-tona` | `page.stores` |
    | Kontakt | `contact` (exists) | `page.contact` |
    | Tabela e përmasave | `tabela-e-permasave` | `page.size-guide` |
-   | Dërgesa & kthimi | `dergesa-dhe-kthimi` | `page.shipping` |
+   | Dërgesa & kthimi | `dergesa-kthimi` | `page.shipping` |
    Section content (rates, FAQ, table rows, store addresses) is prefilled and editable in the theme editor.
 6. **Local pickup** — Settings → Shipping and delivery → Local pickup, enabled for Tiranë, Fier, Vlorë.
    This drives the "Gjendja në dyqane" box (per-store stock, per-size) and the reserve-in-store store list.
