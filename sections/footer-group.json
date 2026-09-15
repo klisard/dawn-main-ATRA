@@ -63,7 +63,7 @@
           "type": "text",
           "settings": {
             "heading": "Atra",
-            "subtext": "<p><a href=\"/pages/rreth-nesh\">Rreth nesh</a><br/><a href=\"/pages/dyqanet\">Dyqanet tona</a><br/><a href=\"/pages/tabela-e-permasave\">Tabela e përmasave</a><br/><a href=\"/pages/dergesa-dhe-kthimi\">Dërgesa &amp; kthimi</a></p>"
+            "subtext": "<p><a href=\"/pages/rreth-nesh\">Rreth nesh</a><br/><a href=\"/pages/dyqanet-tona\">Dyqanet tona</a><br/><a href=\"/pages/tabela-e-permasave\">Tabela e përmasave</a><br/><a href=\"/pages/dergesa-kthimi\">Dërgesa &amp; kthimi</a></p>"
           }
         },
         "contact": {
