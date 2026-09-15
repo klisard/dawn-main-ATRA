@@ -328,8 +328,8 @@ button.shopify-payment-button__button--unbranded,
   color: var(--atra-ink);
 }
 .header__icon .icon { width: 2rem; height: 2rem; }
-.header__icon--cart .icon { width: 2.4rem; height: 2.4rem; }
-.header__icon--cart { margin-right: -0.6rem; }
+.header__icon--cart .icon { width: 5rem; height: 5rem; }
+.header__icon--cart { width: 5.6rem; height: 5.6rem; margin-right: -0.4rem; }
 .cart-count-bubble {
   background: var(--atra-ink);
   color: var(--atra-paper);
@@ -337,12 +337,12 @@ button.shopify-payment-button__button--unbranded,
   font-family: var(--atra-body);
   font-weight: 400;
   font-size: 0.95rem;
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 2rem;
+  height: 2rem;
   left: auto;
-  right: 0.3rem;
+  right: 0;
   bottom: auto;
-  top: 0.4rem;
+  top: 0.2rem;
   line-height: 1;
 }
 .header__icon:hover .icon { transform: none; }
