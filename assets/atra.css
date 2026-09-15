@@ -329,7 +329,7 @@ button.shopify-payment-button__button--unbranded,
 }
 .header__icon .icon { width: 2rem; height: 2rem; }
 .header__icon--cart .icon { width: 5rem; height: 5rem; }
-.header__icon--cart { width: 5.6rem; height: 5.6rem; margin-right: -0.4rem; }
+.header__icon--cart { margin-right: -0.6rem; }
 .cart-count-bubble {
   background: var(--atra-ink);
   color: var(--atra-paper);
