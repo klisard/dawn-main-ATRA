@@ -337,12 +337,12 @@ button.shopify-payment-button__button--unbranded,
   font-family: var(--atra-body);
   font-weight: 400;
   font-size: 0.95rem;
-  width: 2rem;
-  height: 2rem;
+  width: 1.7rem;
+  height: 1.7rem;
   left: auto;
-  right: 0;
+  right: 0.3rem;
   bottom: auto;
-  top: 0.2rem;
+  top: 0.4rem;
   line-height: 1;
 }
 .header__icon:hover .icon { transform: none; }
