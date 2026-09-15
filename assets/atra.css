@@ -1202,6 +1202,8 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
 .rich-text__text { font-size: clamp(1.6rem, 1.6vw, 1.9rem); line-height: 1.75; max-width: 60ch; margin-left: auto; margin-right: auto; }
 .rich-text__caption { margin-bottom: 1.2rem; }
 .rich-text__heading { margin-top: 0; }
+.rich-text__heading.rte, .rich-text__heading.rte p { line-height: 1.08; }
+.rich-text__heading.h0 { max-width: 20ch; margin-left: auto; margin-right: auto; }
 .rich-text__heading em { font-style: italic; }
 .color-scheme-3 .rich-text__caption { color: var(--atra-cream-mute); }
 [id$='__about_image'] .banner { min-height: 0; }
