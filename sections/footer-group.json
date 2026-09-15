@@ -8,14 +8,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "−10% për porosinë e parë",
+            "heading": "Bëhu pjesë e Atra",
             "heading_size": "h2"
           }
         },
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Të rejat, uljet dhe ftesat në dyqan. Një email në javë, pa më shumë.</p>"
+            "text": "<p>Të rejat, koleksionet dhe ftesat në dyqan. Një email në javë, pa më shumë.</p>"
           }
         },
         "email_form": {
