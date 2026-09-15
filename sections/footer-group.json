@@ -39,10 +39,9 @@
       "type": "footer",
       "blocks": {
         "brand": {
-          "type": "text",
+          "type": "brand_information",
           "settings": {
-            "heading": "",
-            "subtext": "<p>Selektim evropian për femra. Tiranë · Fier · Vlorë.</p>"
+            "show_social": false
           }
         },
         "shop": {

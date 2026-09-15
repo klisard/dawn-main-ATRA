@@ -21,7 +21,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Atra lindi si një dyqan i vogël në Tiranë me një ide të thjeshtë: të zgjedhim më pak, por më mirë. Sot jemi tre dyqane dhe një selektim me brende evropiane që ndajnë të njëjtën gjuhë — copë të qeta, materiale të vërteta, përmasa reale.</p>"
+            "text": "<p>Atra lindi si një dyqan i vogël në Tiranë me një ide të thjeshtë: të zgjedhim më pak, por më mirë. Sot jemi tre dyqane dhe një selektim me brende evropiane që ndajnë të njëjtën gjuhë - copë të qeta, materiale të vërteta, përmasa reale.</p>"
           }
         }
       },
@@ -61,7 +61,7 @@
           "type": "column",
           "settings": {
             "title": "Dërgesa 1–3 ditë",
-            "text": "<p>Shqipëri, Kosovë dhe Maqedoni. Falas mbi 8.000 Lek.</p>"
+            "text": "<p>Shqipëri, Kosovë dhe Maqedoni. Falas mbi 6.000 Lek.</p>"
           }
         },
         "v2": {
@@ -82,7 +82,7 @@
           "type": "column",
           "settings": {
             "title": "Porosi me WhatsApp",
-            "text": "<p>Shkruaj +355 69 798 6902 — përgjigje brenda ditës.</p>"
+            "text": "<p>Shkruaj +355 69 798 6902 - përgjigje brenda ditës.</p>"
           }
         }
       },

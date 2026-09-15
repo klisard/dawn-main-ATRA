@@ -504,7 +504,7 @@
       "gift_card_code": "Kodi i kartës dhuratë",
       "shop_link": "Vizito dyqanin online",
       "add_to_apple_wallet": "Shto në Apple Wallet",
-      "qr_image_alt": "Kod QR — skanoje për të përdorur kartën dhuratë",
+      "qr_image_alt": "Kod QR - skanoje për të përdorur kartën dhuratë",
       "copy_code": "Kopjo kodin e kartës",
       "expiration_date": "Skadon më {{ expires_on }}",
       "copy_code_success": "Kodi u kopjua",
@@ -537,19 +537,19 @@
     },
     "reserve": {
       "title": "Rezervo në dyqan",
-      "note": "Zgjidh dyqanin — mbahet 48 orë, pa pagesë paraprake.",
+      "note": "Zgjidh dyqanin - mbahet 48 orë, pa pagesë paraprake.",
       "store": "Dyqani",
       "name": "Emri",
       "phone": "Telefoni",
       "submit": "Rezervo",
-      "success": "Faleminderit — do të kontaktoheni brenda ditës.",
+      "success": "Faleminderit - do të kontaktoheni brenda ditës.",
       "field_product": "Produkti",
       "field_link": "Linku",
       "field_variant": "Varianti"
     },
     "whatsapp": {
       "ask": "Pyet në WhatsApp",
-      "prefill": "Përshëndetje, kam pyetje për: {{ product }} — {{ url }}",
+      "prefill": "Përshëndetje, kam pyetje për: {{ product }} - {{ url }}",
       "float_label": "Na shkruaj në WhatsApp"
     },
     "size_guide": "Tabela e përmasave",

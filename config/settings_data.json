@@ -157,8 +157,8 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-1",
       "brand_headline": "",
-      "brand_description": "<p></p>",
-      "brand_image_width": 100,
+      "brand_description": "<p>Selektim evropian për femra. Tiranë · Fier · Vlorë.</p>",
+      "brand_image_width": 110,
       "social_twitter_link": "",
       "social_facebook_link": "https://www.facebook.com/attrattivo.albania",
       "social_pinterest_link": "",
@@ -198,7 +198,8 @@
       "atra_reserve_enabled": true,
       "atra_store_names": "Atra Tiranë,Atra Fier,Atra Vlorë",
       "logo": "shopify://shop_images/Untitled_design__14_-removebg-preview.png",
-      "favicon": "shopify://shop_images/atralogo.webp"
+      "favicon": "shopify://shop_images/atralogo.webp",
+      "brand_image": "shopify://shop_images/LOGO-bg.png"
     }
   }
 }

@@ -7,7 +7,7 @@
   assign number = number | remove: '+' | remove: ' ' | remove: '-'
   assign message = section.settings.message | default: settings.atra_whatsapp_message
   if template.name == 'product' and product != blank
-    assign message = message | append: ' ' | append: product.title | append: ' — ' | append: shop.url | append: product.url
+    assign message = message | append: ' ' | append: product.title | append: ' - ' | append: shop.url | append: product.url
   endif
 -%}
 

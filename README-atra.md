@@ -1,4 +1,4 @@
-# Atra × Dawn 16 — theme notes
+# Atra × Dawn 16 - theme notes
 
 Atra's storefront is **Dawn 16.0.0 plus an overlay of `atra-*` files**. Dawn stays
 upgradeable: pull a new Dawn, re-apply the three small deltas listed below, done.
@@ -26,8 +26,8 @@ upgradeable: pull a new Dawn, re-apply the three small deltas listed below, done
 | `sections/atra-contact.liquid` | Contact page (info + form) |
 | `sections/atra-recently-viewed.liquid` | Recently viewed strip (product template) |
 | `sections/atra-whatsapp.liquid` | Floating WhatsApp button (footer group) |
-| `sections/atra-store-stock.liquid` | *Internal* — fetched by JS, not placeable |
-| `sections/atra-product-card.liquid` | *Internal* — fetched by JS, not placeable |
+| `sections/atra-store-stock.liquid` | *Internal* - fetched by JS, not placeable |
+| `sections/atra-product-card.liquid` | *Internal* - fetched by JS, not placeable |
 | `snippets/atra-pdp-extras.liquid` | Size-guide link, reserve-in-store form, WhatsApp button |
 | `snippets/atra-store-stock.liquid` + `atra-store-stock-list.liquid` | "Gjendja në dyqane" box |
 | `snippets/atra-pdp-description.liquid` | Description as an accordion row |
@@ -78,16 +78,16 @@ line/block, then push. Shopify syncs the commit to the connected theme.
 
 ## Admin checklist (content the code can't create)
 
-1. **Typography** — Theme settings → Typography: headings *Cormorant* 300, body *Jost* 300 are preselected
+1. **Typography** - Theme settings → Typography: headings *Cormorant* 300, body *Jost* 300 are preselected
    (the design uses Cormorant Garamond, which is not in Shopify's font library; Cormorant is the same family).
    To use Cormorant Garamond exactly, upload woff2 files to `assets/` and add `@font-face` + set `--atra-display` in `atra.css`.
-2. **Theme settings → Atra** — WhatsApp number, default message, floating button, size-guide page, reserve-in-store on/off, store names.
+2. **Theme settings → Atra** - WhatsApp number, default message, floating button, size-guide page, reserve-in-store on/off, store names.
 3. **Menus** (Online Store → Navigation)
-   - `main-menu` — already exists. For grouped columns in the mega menu (Sipër / Poshtë / Fustane) make Veshje three levels deep; a flat list renders as three columns automatically.
-   - `mega-veshje`, `mega-kepuce`, `mega-aksesor`, `mega-brand` *(optional)* — up to two collection links each; their featured images become the promo cards. Without these menus the cards come from the first child collections that have an image.
-   - `footer-blej`, `footer-ndihme`, `footer-atra` — the three footer columns.
-4. **Collection images** — set a featured image on every collection in the menu (mega cards, category grid, sub-category chips).
-5. **Pages** — create and assign the template suffix:
+   - `main-menu` - already exists. For grouped columns in the mega menu (Sipër / Poshtë / Fustane) make Veshje three levels deep; a flat list renders as three columns automatically.
+   - `mega-veshje`, `mega-kepuce`, `mega-aksesor`, `mega-brand` *(optional)* - up to two collection links each; their featured images become the promo cards. Without these menus the cards come from the first child collections that have an image.
+   - `footer-blej`, `footer-ndihme`, `footer-atra` - the three footer columns.
+4. **Collection images** - set a featured image on every collection in the menu (mega cards, category grid, sub-category chips).
+5. **Pages** - create and assign the template suffix:
    | Page | Handle | Template |
    |---|---|---|
    | Rreth nesh | `rreth-nesh` | `page.about` |
@@ -96,15 +96,15 @@ line/block, then push. Shopify syncs the commit to the connected theme.
    | Tabela e përmasave | `tabela-e-permasave` | `page.size-guide` |
    | Dërgesa & kthimi | `dergesa-kthimi` | `page.shipping` |
    Section content (rates, FAQ, table rows, store addresses) is prefilled and editable in the theme editor.
-6. **Local pickup** — Settings → Shipping and delivery → Local pickup, enabled for Tiranë, Fier, Vlorë.
+6. **Local pickup** - Settings → Shipping and delivery → Local pickup, enabled for Tiranë, Fier, Vlorë.
    This drives the "Gjendja në dyqane" box (per-store stock, per-size) and the reserve-in-store store list.
-7. **Home page** — hero image, shop-the-look image + 3 products, brand images (or collection images), Instagram images, countdown deadline.
-8. **Languages / money** — Settings → Languages: Albanian as default (strings come from `locales/sq.json`);
+7. **Home page** - hero image, shop-the-look image + 3 products, brand images (or collection images), Instagram images, countdown deadline.
+8. **Languages / money** - Settings → Languages: Albanian as default (strings come from `locales/sq.json`);
    Settings → Store details → currency format `{{amount_no_decimals}} Lek`.
 
 ## How the custom pieces work
 
-- **In-store stock** reads `variant.store_availabilities` (real inventory per location) — no app, no metafields.
+- **In-store stock** reads `variant.store_availabilities` (real inventory per location) - no app, no metafields.
   It lists sizes in stock per store by matching sibling variants with the same colour. Re-rendered on variant change via `/variants/:id?section_id=atra-store-stock`.
 - **Reserve in store** is a Shopify contact form (emails the store with product, variant, store, name, phone). A true hold needs an app or draft orders.
 - **WhatsApp** links use `wa.me` with a prefilled message; on product pages the message includes the product title and URL.

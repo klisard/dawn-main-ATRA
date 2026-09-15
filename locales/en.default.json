@@ -505,7 +505,7 @@
       "gift_card_code": "Gift card code",
       "shop_link": "Visit online store",
       "add_to_apple_wallet": "Add to Apple Wallet",
-      "qr_image_alt": "QR code — scan to redeem gift card",
+      "qr_image_alt": "QR code - scan to redeem gift card",
       "copy_code": "Copy gift card code",
       "expiration_date": "Expires {{ expires_on }}",
       "copy_code_success": "Code copied successfully",
@@ -538,19 +538,19 @@
     },
     "reserve": {
       "title": "Reserve in store",
-      "note": "Choose a store — held for 48 hours, no prepayment.",
+      "note": "Choose a store - held for 48 hours, no prepayment.",
       "store": "Store",
       "name": "Name",
       "phone": "Phone",
       "submit": "Reserve",
-      "success": "Thank you — we will contact you today.",
+      "success": "Thank you - we will contact you today.",
       "field_product": "Product",
       "field_link": "Link",
       "field_variant": "Variant"
     },
     "whatsapp": {
       "ask": "Ask on WhatsApp",
-      "prefill": "Hello, I have a question about: {{ product }} — {{ url }}",
+      "prefill": "Hello, I have a question about: {{ product }} - {{ url }}",
       "float_label": "Chat with us on WhatsApp"
     },
     "size_guide": "Size guide",

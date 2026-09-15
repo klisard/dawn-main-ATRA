@@ -4,7 +4,7 @@
       "type": "atra-faq",
       "blocks": {
         "r1": { "type": "rate", "settings": { "label": "Shqipëri", "value": "300 Lek" } },
-        "r2": { "type": "rate", "settings": { "label": "Mbi 8.000 Lek", "value": "Falas" } },
+        "r2": { "type": "rate", "settings": { "label": "Mbi 6.000 Lek", "value": "Falas" } },
         "r3": { "type": "rate", "settings": { "label": "Kosovë", "value": "600 Lek" } },
         "r4": { "type": "rate", "settings": { "label": "Maqedoni", "value": "700 Lek" } },
         "q1": {
@@ -19,7 +19,7 @@
           "type": "question",
           "settings": {
             "heading": "Sa kushton dërgesa?",
-            "content": "<p>300 Lek brenda Shqipërisë, falas për porosi mbi 8.000 Lek. Kosovë 600 Lek, Maqedoni 700 Lek.</p>",
+            "content": "<p>300 Lek brenda Shqipërisë, falas për porosi mbi 6.000 Lek. Kosovë 600 Lek, Maqedoni 700 Lek.</p>",
             "open": false
           }
         },
@@ -35,7 +35,7 @@
           "type": "question",
           "settings": {
             "heading": "Mund të ndërroj përmasën?",
-            "content": "<p>Po — ndërrimi i përmasës është falas një herë për porosi, në varësi të stokut.</p>",
+            "content": "<p>Po - ndërrimi i përmasës është falas një herë për porosi, në varësi të stokut.</p>",
             "open": false
           }
         },

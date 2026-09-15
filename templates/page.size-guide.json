@@ -13,7 +13,7 @@
       "block_order": ["xs", "s", "m", "l", "xl", "xxl"],
       "settings": {
         "heading": "Tabela e përmasave",
-        "intro": "<p>Matjet janë në centimetra, të trupit — jo të veshjes. Në dyshim, zgjidh përmasën më të madhe: ndërrimi i parë është falas.</p>",
+        "intro": "<p>Matjet janë në centimetra, të trupit - jo të veshjes. Në dyshim, zgjidh përmasën më të madhe: ndërrimi i parë është falas.</p>",
         "columns": "Përmasa,Gjoks,Bel,Vithe,IT",
         "color_scheme": "scheme-1",
         "padding_top": 48,
@@ -41,7 +41,7 @@
           "type": "column",
           "settings": {
             "title": "Ndihmë",
-            "text": "<p>Shkruaj në WhatsApp me gjatësinë dhe përmasën e zakonshme — ta zgjedhim ne.</p>"
+            "text": "<p>Shkruaj në WhatsApp me gjatësinë dhe përmasën e zakonshme - ta zgjedhim ne.</p>"
           }
         }
       },
