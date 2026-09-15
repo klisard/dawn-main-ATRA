@@ -1,5 +1,14 @@
 {
   "sections": {
+    "crumbs": {
+      "type": "atra-breadcrumbs",
+      "settings": {
+        "menu": "main-menu",
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -138,5 +147,11 @@
       }
     }
   },
-  "order": ["main", "disclosures", "related", "recent"]
+  "order": [
+    "crumbs",
+    "main",
+    "disclosures",
+    "related",
+    "recent"
+  ]
 }

@@ -440,7 +440,8 @@ button.shopify-payment-button__button--unbranded,
 /* Dawn paints its overlay via .banner__media::after (opacity from the section setting).
    Turn that flat black into a bottom-heavy gradient; the section keeps opacity 100. */
 .banner .banner__media.media::after {
-  background: linear-gradient(to top, rgba(24, 21, 19, 0.85) 0%, rgba(24, 21, 19, 0.6) 34%, rgba(24, 21, 19, 0.25) 62%, rgba(24, 21, 19, 0.05) 100%);
+  background: linear-gradient(to top, rgba(24, 21, 19, 0.88) 0%, rgba(24, 21, 19, 0.62) 36%, rgba(24, 21, 19, 0.28) 64%, rgba(24, 21, 19, 0.06) 100%);
+  opacity: 1 !important;
 }
 .banner .banner__media.media::before { display: none; }
 .banner__box { text-shadow: 0 1px 24px rgba(24, 21, 19, 0.35); }
@@ -543,7 +544,8 @@ s.price-item--regular {
 .collection-list__item .card__heading { font-weight: 400; font-size: 1.15rem; letter-spacing: 0.16em; text-transform: uppercase; }
 
 /* ---------- 9. Collection page -------------------------------- */
-.atra-breadcrumbs { margin-bottom: clamp(2rem, 3vw, 3.2rem); }
+.atra-colhead .atra-breadcrumbs { margin-bottom: clamp(2rem, 3vw, 3.2rem); }
+.atra-breadcrumbs-section .atra-breadcrumbs { margin-bottom: 0; }
 .atra-breadcrumbs__list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0; padding: 0; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.06em; color: var(--atra-mute); }
 .atra-breadcrumbs__list li + li::before { content: '/'; margin-right: 0.6rem; }
 .atra-breadcrumbs__list a { color: var(--atra-mute); text-decoration: none; }
@@ -560,9 +562,11 @@ s.price-item--regular {
 .atra-colhead__description { font-size: 1.55rem; max-width: 52ch; margin: 1.4rem 0 0; }
 .atra-colhead__description p { margin: 0; }
 
-.atra-subnav { display: flex; flex-wrap: wrap; gap: 0.8rem; min-width: 0; }
-@media screen and (max-width: 989px) { .atra-subnav { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.4rem; scrollbar-width: thin; } }
-@media screen and (min-width: 990px) { .atra-colhead__inner { grid-template-columns: minmax(28rem, 40%) minmax(0, 1fr); } .atra-colhead__inner > .atra-subnav { justify-content: flex-end; } }
+.atra-subnav { display: flex; flex-wrap: nowrap; gap: 0.8rem; min-width: 0; overflow-x: auto; padding-bottom: 0.6rem; scrollbar-width: thin; scrollbar-color: var(--atra-line-2) transparent; }
+.atra-subnav::-webkit-scrollbar { height: 0.3rem; }
+.atra-subnav::-webkit-scrollbar-thumb { background: var(--atra-line-2); }
+.atra-colhead__inner { grid-template-columns: minmax(0, 1fr); }
+.atra-colhead__inner > .atra-subnav { margin-top: 0.8rem; }
 .atra-subnav__chip {
   flex: 0 0 auto;
   display: flex;
@@ -1237,6 +1241,8 @@ a.atra-ig__tile:hover .atra-ig__img { opacity: 0.75; }
   .product__info-wrapper { padding-left: 0; }
 }
 @media screen and (max-width: 749px) {
+  .banner--large:not(.banner--adapt) { min-height: 56rem; }
+  .banner--medium:not(.banner--adapt) { min-height: 46rem; }
   .product-form__input input[type='radio'] + label { min-width: 4.4rem; padding: 1rem 0.6rem; margin-right: 0.6rem; font-size: 1.15rem; }
   .announcement-bar__message, .utility-bar p, .utility-bar a { font-size: 0.95rem; letter-spacing: 0.14em; padding-top: 0.9rem; padding-bottom: 0.9rem; }
   .atra-countdown__inner { justify-content: flex-start; }
