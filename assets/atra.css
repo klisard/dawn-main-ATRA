@@ -288,7 +288,8 @@ button.shopify-payment-button__button--unbranded,
 .header { padding-left: var(--atra-gutter); padding-right: var(--atra-gutter); }
 .header__heading-logo { max-width: 13.2rem; }
 .header__heading-logo-wrapper { display: block; }
-.header__heading-logo { width: 100%; height: auto; }
+.header__heading-logo { width: auto; max-height: 5.2rem; height: auto; object-fit: contain; }
+.header__heading-logo-wrapper img { max-height: 5.2rem; width: auto; }
 .header__heading-link .h2,
 .header__heading-link,
 .header__heading {
