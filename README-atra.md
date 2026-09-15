@@ -14,7 +14,7 @@ upgradeable: pull a new Dawn, re-apply the three small deltas listed below, done
 | `assets/atra-recently-viewed.js` | "Të shikuara së fundi" (localStorage + Section Rendering API) |
 | `sections/atra-countdown.liquid` | Sale countdown band |
 | `sections/atra-category-grid.liquid` | "Blej sipas kategorisë" tiles with product counts |
-| `sections/atra-brand-shops.liquid` | attrattivo / ONLY / DESIREE cards |
+| `sections/atra-brand-shops.liquid` | Attrattivo / Only brand cards |
 | `sections/atra-shop-the-look.liquid` | Editorial image + shoppable list |
 | `sections/atra-services.liquid` | Numbered dark services band |
 | `sections/atra-instagram.liquid` | Square image grid |
