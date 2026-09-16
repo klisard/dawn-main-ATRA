@@ -709,7 +709,7 @@ s.price-item--regular {
 /* ---------- 10. Product page ---------------------------------- */
 .product__info-wrapper { padding-left: clamp(2rem, 4vw, 6.4rem); }
 .product__info-container > * + * { margin-top: 2.2rem; }
-.product__text.caption-with-letter-spacing { color: var(--atra-mute); font-size: 1.2rem; letter-spacing: 0.04em; text-transform: none; }
+.product__text, .product__text.caption-with-letter-spacing, .product__text.subtitle { color: var(--atra-mute); font-size: 1.2rem; font-weight: 300; letter-spacing: 0.04em; text-transform: none; margin: 0; }
 .product__title { margin-top: 1.2rem; }
 .product .price--large .price-item,
 .product .price--large { font-size: 2rem; font-weight: 400; }
