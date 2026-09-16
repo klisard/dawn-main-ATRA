@@ -351,10 +351,10 @@ button.shopify-payment-button__button--unbranded,
 .menu-drawer { background: var(--atra-paper); }
 .menu-drawer__menu-item {
   font-family: var(--atra-body);
-  font-weight: 400;
-  font-size: 1.3rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 .menu-drawer__menu .menu-drawer__menu-item { padding-top: 1.4rem; padding-bottom: 1.4rem; }
 .menu-drawer__utility-links { background: var(--atra-paper-2); }
@@ -468,6 +468,10 @@ button.shopify-payment-button__button--unbranded,
 
 /* ---------- 8. Product cards ---------------------------------- */
 .card__inner { background: var(--atra-paper-3); }
+/* Product cards: fixed 2:3 frame, whole photo visible (no crop), same height for every card */
+.card--standard .card__inner.ratio { aspect-ratio: 2 / 3; }
+.card--standard .card__inner.ratio::before { padding-bottom: 0; }
+.card--standard .card__media .media img { object-fit: contain; object-position: center bottom; }
 .card--standard .card__inner .card__information { display: none; }
 .card__media .media img { transition: transform 0.6s var(--atra-ease), opacity 0.45s var(--atra-ease); }
 .card-wrapper:hover .card__media .media img:first-child { transform: scale(1.03); }
@@ -711,6 +715,9 @@ s.price-item--regular {
 .product .price--large .price-item--regular.compare { font-size: 1.5rem; }
 .product .price .badge { font-size: 0.95rem; letter-spacing: 0.16em; padding: 0.5rem 0.9rem; }
 .product__tax { font-size: 1.25rem; color: var(--atra-mute); font-weight: 300; }
+.product__sku { font-size: 1.15rem; color: var(--atra-mute); font-weight: 300; letter-spacing: 0.06em; margin: 0; }
+.product__sku::before { content: "Kodi: "; }
+.product__info-container > .product__sku { margin-top: 0.8rem; }
 .product-form__input .form__label { margin-bottom: 1.2rem; color: var(--atra-ink); }
 .product-form__input--pill input[type='radio'] + label,
 .product-form__input input[type='radio'] + label {

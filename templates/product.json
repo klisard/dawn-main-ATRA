@@ -80,12 +80,19 @@
             "icon": "none",
             "content": "<p>1–3 ditë pune. Kthim brenda 14 ditësh, në dyqan ose me postë.</p>"
           }
+        },
+        "sku": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "price",
+        "sku",
         "variant_picker",
         "buy_buttons",
         "atra_extras",

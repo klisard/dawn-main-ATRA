@@ -109,4 +109,5 @@ line/block, then push. Shopify syncs the commit to the connected theme.
 - **Reserve in store** is a Shopify contact form (emails the store with product, variant, store, name, phone). A true hold needs an app or draft orders.
 - **WhatsApp** links use `wa.me` with a prefilled message; on product pages the message includes the product title and URL.
 - **Recently viewed** stores handles in `localStorage` and renders Dawn product cards through `/products/:handle?section_id=atra-product-card`.
+- **Product card frame** is forced to 2:3 with the whole photo visible (`atra.css`, `.card--standard .card__inner.ratio`); the section "Image ratio" setting no longer matters for product cards.
 - **Mega menu promo cards** come from `mega-<handle>` menus, then the top-level collection, then child collections with images.

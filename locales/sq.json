@@ -116,7 +116,7 @@
       "inventory_low_stock_show_count": "Stok i kufizuar: {{ quantity }} të mbetura",
       "inventory_out_of_stock": "Pa stok",
       "inventory_out_of_stock_continue_selling": "Në stok",
-      "sku": "SKU",
+      "sku": "Kodi",
       "on_sale": "Ulje",
       "product_variants": "Variantet e produktit",
       "media": {
@@ -217,6 +217,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Kjo faqe nuk gjendet",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Asnjë rezultat për “{{ terms }}”. Kontrollo drejtshkrimin ose provo një fjalë tjetër.",
       "page": "Faqe",
@@ -260,10 +264,6 @@
         "post_success": "Faleminderit që na kontaktuat. Do t'ju përgjigjemi sa më shpejt.",
         "error_heading": "Ju lutem korrigjoni sa më poshtë:"
       }
-    },
-    "404": {
-      "title": "Kjo faqe nuk gjendet",
-      "subtext": "404"
     }
   },
   "sections": {
