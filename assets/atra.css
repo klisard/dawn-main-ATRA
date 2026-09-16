@@ -467,11 +467,12 @@ button.shopify-payment-button__button--unbranded,
 .banner .button--secondary:hover { background: rgba(253, 252, 250, 0.14); }
 
 /* ---------- 8. Product cards ---------------------------------- */
-.card__inner { background: var(--atra-paper-3); }
-/* Product cards: fixed 2:3 frame, whole photo visible (no crop), same height for every card */
-.card--standard .card__inner.ratio { aspect-ratio: 2 / 3; }
+/* Product cards: fixed 3:4 frame, whole photo visible (no crop), same height for every card.
+   Letterbox colour sits between the cream and grey studio backdrops used in the catalogue. */
+.card__inner { background: #f0eeea; }
+.card--standard .card__inner.ratio { aspect-ratio: 3 / 4; }
 .card--standard .card__inner.ratio::before { padding-bottom: 0; }
-.card--standard .card__media .media img { object-fit: contain; object-position: center bottom; }
+.card--standard .card__media .media img { object-fit: contain; object-position: center center; }
 .card--standard .card__inner .card__information { display: none; }
 .card__media .media img { transition: transform 0.6s var(--atra-ease), opacity 0.45s var(--atra-ease); }
 .card-wrapper:hover .card__media .media img:first-child { transform: scale(1.03); }
