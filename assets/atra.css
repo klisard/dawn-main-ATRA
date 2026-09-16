@@ -716,7 +716,7 @@ s.price-item--regular {
 .product .price .badge { font-size: 0.95rem; letter-spacing: 0.16em; padding: 0.5rem 0.9rem; }
 .product__tax { font-size: 1.25rem; color: var(--atra-mute); font-weight: 300; }
 .product__sku { font-size: 1.15rem; color: var(--atra-mute); font-weight: 300; letter-spacing: 0.06em; margin: 0; }
-.product__sku::before { content: "Kodi: "; }
+.product__sku::before { content: "SKU: "; }
 .product__info-container > .product__sku { margin-top: 0.8rem; }
 .product-form__input .form__label { margin-bottom: 1.2rem; color: var(--atra-ink); }
 .product-form__input--pill input[type='radio'] + label,

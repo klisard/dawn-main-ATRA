@@ -116,7 +116,7 @@
       "inventory_low_stock_show_count": "Stok i kufizuar: {{ quantity }} të mbetura",
       "inventory_out_of_stock": "Pa stok",
       "inventory_out_of_stock_continue_selling": "Në stok",
-      "sku": "Kodi",
+      "sku": "SKU",
       "on_sale": "Ulje",
       "product_variants": "Variantet e produktit",
       "media": {
