@@ -467,10 +467,10 @@ button.shopify-payment-button__button--unbranded,
 .banner .button--secondary:hover { background: rgba(253, 252, 250, 0.14); }
 
 /* ---------- 8. Product cards ---------------------------------- */
-/* Product cards: fixed 3:4 frame, whole photo visible (no crop), same height for every card.
+/* Product cards: fixed 5:7 frame, whole photo visible (no crop), same height for every card.
    Letterbox colour sits between the cream and grey studio backdrops used in the catalogue. */
 .card__inner { background: #f0eeea; }
-.card--standard .card__inner.ratio { aspect-ratio: 3 / 4; }
+.card--standard .card__inner.ratio { aspect-ratio: 5 / 7; }
 .card--standard .card__inner.ratio::before { padding-bottom: 0; }
 .card--standard .card__media .media img { object-fit: contain; object-position: center center; }
 .card--standard .card__inner .card__information { display: none; }
